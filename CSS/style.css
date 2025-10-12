@@ -280,7 +280,7 @@ button a:hover {
 }
 
 .about {
-  padding: 6rem 10%;
+  padding: 6rem 5%;
   background-color: #fff;
   color: #333;
 }
@@ -369,3 +369,585 @@ button a:hover {
   background-color: #43a047;
 }
 
+
+.offer-section {
+  padding: 60px 20px;
+  background: #f3f3f3;
+  text-align: center;
+}
+
+.offer-header h2 {
+  font-size: 1.2rem;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.offer-header p {
+  color: #555;
+  font-size: 0.7rem;
+  margin-bottom: 40px;
+}
+
+.offer-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.offer-card {
+  position: relative;
+  width: 320px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.offer-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.offer-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.offer-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0));
+  color: #fff;
+  transition: background 0.3s ease;
+}
+
+.offer-tag {
+  background: #28a745;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 0.6rem;
+}
+
+.offer-content h3 {
+  margin: 10px 0 0;
+  font-size: 0.8rem;
+}
+
+.offer-hover {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.offer-card:hover .offer-hover {
+  opacity: 1;
+  max-height: 200px;
+  margin-top: 10px;
+}
+
+.offer-hover p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 15px;
+}
+
+.offer-btn {
+  background: #28a745;
+  border: none;
+  padding: 8px 16px;
+  color: #fff;
+  font-weight: 500;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.offer-btn i {
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+}
+
+.offer-btn:hover i {
+  transform: translateX(5px);
+}
+
+.offer-btn:hover {
+  background: #23963d;
+}
+
+
+
+/* --- Stats Section --- */
+.stats {
+  background: #57a44c;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 60px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat {
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.stat i {
+  font-size: 20px;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+}
+
+.stat:hover i {
+  transform: scale(1.3);
+  color: #c5f0c1;
+}
+
+.counter {
+  font-size: 26px;
+  font-weight: 500;
+  margin: 5px 0;
+}
+
+/* --- Testimonials --- */
+.testimonials {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.testimonial-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.testimonial {
+  background: #57a44c;
+  color: white;
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 600px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.testimonial img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.text {
+  text-align: left;
+}
+
+.text h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.text .role {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.text .quote {
+  margin-top: 10px;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+#prev, #next {
+  background: #57a44c;
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 0 10px;
+  transition: background 0.3s;
+}
+
+#prev:hover, #next:hover {
+  background: #4a8c41;
+}
+
+/* Add testimonial form */
+#testimonial-form {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin-inline: auto;
+  gap: 10px;
+}
+
+#testimonial-form input,
+#testimonial-form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+#testimonial-form button {
+  padding: 10px;
+  border: none;
+  background: #57a44c;
+  color: white;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#testimonial-form button:hover {
+  background: #4a8c41;
+}
+
+
+/* ===== PROJECTS SECTION ===== */
+.projects {
+  padding: 80px 5%;
+  text-align: center;
+  background-color: white;
+}
+.projects .subheading {
+  color: green;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.projects h2 {
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  color: green;
+}
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 25px;
+}
+.project-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.project-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.project-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  padding: 20px;
+  text-align: left;
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+}
+.project-card:hover img {
+  transform: scale(1.1);
+}
+.project-card:hover .project-overlay {
+  transform: translateY(0);
+}
+
+/* ===== MODAL ===== */
+.project-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  color: black;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+.project-modal.active {
+  display: flex;
+}
+.modal-content {
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  max-width: 600px;
+  width: 90%;
+  text-align: center;
+  animation: fadeIn 0.4s ease;
+  position: relative;
+}
+.modal-content img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 22px;
+  cursor: pointer;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* ===== WHY CHOOSE US ===== */
+.why-choose {
+  padding: 100px 5%;
+  background: black;
+  /* height: 100vh; */
+}
+.choose-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  align-items: center;
+}
+.choose-image {
+  flex: 1 1 400px;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+.choose-image img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  transition: transform 0.4s ease;
+}
+.choose-image:hover img {
+  transform: scale(1.05);
+}
+.image-tag {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  background: green;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.choose-content {
+  flex: 1 1 400px;
+}
+.choose-content h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+.choose-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+.choose-list li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+  transition: transform 0.3s ease;
+}
+.choose-list li:hover {
+  transform: translateX(5px);
+}
+.btn-discover {
+  background: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+.btn-discover:hover {
+  background: #45a049;
+  transform: translateY(-2px);
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background-color: #0d141a;
+  color: #d1d1d1;
+  padding: 60px 10% 30px;
+  font-size: 0.95rem;
+}
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 40px;
+}
+.footer-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 15px;
+}
+.footer-logo i {
+  color: #63d471;
+  margin-right: 8px;
+}
+.footer p {
+  line-height: 1.7;
+}
+.footer-col h4 {
+  color: #fff;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+.footer-col ul li a {
+  color: #d1d1d1;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.footer-col ul li a:hover {
+  color: #63d471;
+}
+.social-icons a {
+  display: inline-block;
+  margin-right: 12px;
+  background: #1c242c;
+  color: #fff;
+  padding: 10px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+.social-icons a:hover {
+  background: #63d471;
+  color: #0d141a;
+}
+.contact p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.contact i {
+  color: #63d471;
+}
+
+/* ===== NEWSLETTER ===== */
+.newsletter {
+  text-align: center;
+  margin-top: 40px;
+}
+.newsletter h4 {
+  color: #fff;
+  margin-bottom: 10px;
+}
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+.newsletter-form input {
+  padding: 12px 15px;
+  border: none;
+  border-radius: 25px 0 0 25px;
+  width: 250px;
+  outline: none;
+  background: #1c242c;
+  color: #fff;
+}
+.newsletter-form button {
+  padding: 12px 25px;
+  background: #63d471;
+  color: #000;
+  border: none;
+  border-radius: 0 25px 25px 0;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+.newsletter-form button:hover {
+  background: #5ac668;
+}
+
+/* ===== FOOTER BOTTOM ===== */
+.footer-bottom {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #a8a8a8;
+}
+
+/* ===== BACK TO TOP ===== */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #63d471;
+  color: #000;
+  border: none;
+  padding: 12px 14px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 999;
+}
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+.back-to-top:hover {
+  transform: translateY(-5px);
+  background: #5ac668;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .footer {
+    text-align: center;
+  }
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+  .newsletter-form {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .newsletter-form input, .newsletter-form button {
+    border-radius: 25px;
+    width: 100%;
+  }
+}

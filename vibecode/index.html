@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AgriMarket | Fresh & Sustainable Agriculture</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header id="navbar">
+      <div class="container">
+        <div class="logo">
+          <span class="logo-text">AgriMarket</span>
+        </div>
+        <nav class="nav-links">
+          <a href="#" class="nav-link active" data-page="home">Home</a>
+          <a href="#" class="nav-link" data-page="about">About</a>
+        </nav>
+        <button id="mobileMenuBtn" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+      <div id="mobileMenu">
+        <a href="#" data-page="home">Home</a>
+        <a href="#" data-page="about">About</a>
+      </div>
+    </header>
+
+    <!-- Home Page -->
+    <main id="homePage" class="page active">
+      <section class="hero">
+        <div class="container hero-content">
+          <h1>Connecting Farms to the Future</h1>
+          <p>
+            Fresh, sustainable, and transparent agriculture solutions for
+            everyone.
+          </p>
+          <button class="btn">Get Started</button>
+        </div>
+      </section>
+
+      <section class="features container">
+        <div class="feature">
+          <i class="fa-solid fa-leaf"></i>
+          <h3>Organic Produce</h3>
+          <p>Pure, fresh, and responsibly sourced crops.</p>
+        </div>
+        <div class="feature">
+          <i class="fa-solid fa-seedling"></i>
+          <h3>Smart Farming</h3>
+          <p>Empowering farmers with modern agricultural tech.</p>
+        </div>
+        <div class="feature">
+          <i class="fa-solid fa-globe"></i>
+          <h3>Global Reach</h3>
+          <p>Connecting producers to markets worldwide.</p>
+        </div>
+      </section>
+
+      <section class="stats">
+        <div class="container stats-container">
+          <div class="stat">
+            <span class="stat-number" data-target="1200">0</span>
+            <p>Farmers Connected</p>
+          </div>
+          <div class="stat">
+            <span class="stat-number" data-target="350">0</span>
+            <p>Products Listed</p>
+          </div>
+          <div class="stat">
+            <span class="stat-number" data-target="98">0</span>
+            <p>Communities Served</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonials">
+        <div class="container">
+          <h2>What Our Clients Say</h2>
+          <div class="testimonial-content">
+            <img class="testimonial-avatar" alt="Client photo" />
+            <h3 id="testimonialName"></h3>
+            <p id="testimonialRole" class="role"></p>
+            <p id="testimonialText" class="text"></p>
+          </div>
+          <div class="dots">
+            <span class="dot" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- About Page -->
+    <main id="aboutPage" class="page">
+      <section class="about container">
+        <h2>About AgriMarket</h2>
+        <p>
+          We’re building the future of sustainable agriculture through
+          technology, transparency, and trust.
+        </p>
+
+        <div class="tabs">
+          <button class="tab-btn active" data-tab="mission">Our Mission</button>
+          <button class="tab-btn" data-tab="vision">Our Vision</button>
+          <button class="tab-btn" data-tab="team">Our Team</button>
+        </div>
+
+        <div id="mission" class="tab-panel active">
+          <p>
+            Empowering local farmers and ensuring everyone gets access to fresh
+            produce.
+          </p>
+        </div>
+        <div id="vision" class="tab-panel">
+          <p>To become the most trusted agricultural marketplace globally.</p>
+        </div>
+        <div id="team" class="tab-panel">
+          <p>
+            Our diverse team works tirelessly to improve the way food moves
+            across the world.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <form class="newsletter-form">
+          <input type="email" placeholder="Enter your email" required />
+          <button type="submit" class="btn">Subscribe</button>
+        </form>
+        <p>© <span id="year"></span> AgriMarket. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
