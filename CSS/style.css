@@ -1,0 +1,261 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  background-color: #000;
+}
+
+/* Header Styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+  height: 10vh;
+  transition: all 0.4s ease;
+  z-index: 100;
+}
+
+.heroHeader {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background-color: transparent;
+}
+
+.HeaderLeft {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.HeaderLeft > div {
+  background-color: green;
+  border-radius: 50px;
+  padding: 5px;
+}
+
+.HeaderLeft span {
+  color: rgb(235, 235, 235);
+}
+
+.HeaderRight {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+nav {
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  color: rgb(235, 235, 235);
+}
+
+nav a:hover {
+  color: green;
+  padding-bottom: 4px;
+  border-bottom: 2px solid white;
+}
+
+button {
+  background-color: green;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+button a {
+  color: white;
+}
+
+/* Fixed White Header */
+.fixedHeader {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #fff;
+  color: #000;
+  display: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.fixedHeader .HeaderLeft span,
+.fixedHeader nav a {
+  color: #000;
+}
+
+.fixedHeader button {
+  background-color: green;
+}
+
+.fixedHeader button a {
+  color: #fff;
+}
+
+.fixedHeader.show {
+  display: flex;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 90vh;
+  background: 
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)),
+    url("/assets/images/agricultural-field-ai-generated.jpg") center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  padding: 0 10%;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.welcome {
+  display: inline-block;
+  background: green;
+  padding: 8px 18px;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.hero-content h1 span {
+  color: #00c500;
+  font-weight: 600;
+}
+
+.hero-content p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 35px;
+  color: #e5e5e5;
+}
+
+.hero-btn {
+  display: flex;
+  gap: 10px;
+}
+
+.herobtnBrowse {
+  background-color: green;
+  border: none;
+  color: white;
+  font-size: 10px;
+  padding: 15px 20px;
+  border-radius: 20px;
+}
+
+.herobtnBrowse:hover {
+  background-color: rgb(1, 76, 1);
+}
+
+.herobtnLearn {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 10px;
+  padding: 15px 23px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.herobtnLearn:hover {
+  background-color: rgba(195, 195, 195, 0.35);
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  font-size: 1.5rem;
+  opacity: 0.7;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+
+/* Features Section */
+.features {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 40px;
+  padding: 80px 10%;
+  background-color: #f8f9fa;
+}
+
+.feature-card {
+  flex: 1;
+  background-color: #fff;
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  text-align: left;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.feature-icon {
+  background-color: #3a9b43;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  width: 60px;
+  height: 60px;
+  margin-bottom: 25px;
+  transition: all 0.3s ease;
+}
+
+.feature-icon i {
+  font-size: 26px;
+  color: #fff;
+  transition: transform 0.3s ease;
+}
+
+.feature-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+.feature-card p {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.feature-card:hover .feature-icon {
+  transform: scale(1.15);
+}
+
+.feature-card:hover .feature-icon i {
+  transform: scale(1.2);
+}
