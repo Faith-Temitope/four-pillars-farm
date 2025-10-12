@@ -3,144 +3,349 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AgriMarket | Fresh & Sustainable Agriculture</title>
+    <title>Four Pillars Agriculture</title>
+    <meta name="description" content="FourPillars — sustainable, organic farming powered by modern tech. Fresh produce, dairy, and livestock from responsible farms." />
+
+    <!-- Font Awesome (CDN) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
     <link rel="stylesheet" href="./style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
   </head>
   <body>
-    <!-- Navbar -->
-    <header id="navbar">
-      <div class="container">
-        <div class="logo">
-          <span class="logo-text">AgriMarket</span>
+    <!-- Single Header (toggle .scrolled via JS) -->
+    <header class="header heroHeader" id="siteHeader" role="banner">
+      <div class="HeaderLeft">
+        <div aria-hidden="true">
+          <i class="fa-solid fa-leaf"></i>
         </div>
-        <nav class="nav-links">
-          <a href="#" class="nav-link active" data-page="home">Home</a>
-          <a href="#" class="nav-link" data-page="about">About</a>
-        </nav>
-        <button id="mobileMenuBtn" aria-label="Toggle Menu">
-          <i class="fa-solid fa-bars"></i>
-        </button>
+        <span>FourPillars</span>
       </div>
-      <div id="mobileMenu">
-        <a href="#" data-page="home">Home</a>
-        <a href="#" data-page="about">About</a>
+
+      <div class="HeaderRight">
+        <nav role="navigation" aria-label="Main navigation">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Services</a>
+          <a href="#">Products</a>
+          <a href="#">Contact</a>
+        </nav>
+        <!-- Use anchor for navigation -->
+        <a class="btn-get-started" href="#" role="button">Get Started</a>
       </div>
     </header>
 
-    <!-- Home Page -->
-    <main id="homePage" class="page active">
-      <section class="hero">
-        <div class="container hero-content">
-          <h1>Connecting Farms to the Future</h1>
+    <!-- Hero Section -->
+    <main>
+      <section class="hero" id="hero">
+        <div class="hero-content">
+          <div class="welcome">Welcome to Four Pillars</div>
+          <h1>Building a <span>Greener Future</span> through Innovation</h1>
           <p>
-            Fresh, sustainable, and transparent agriculture solutions for
-            everyone.
+            We combine modern technology and agricultural expertise to empower
+            farmers and drive sustainability.
           </p>
-          <button class="btn">Get Started</button>
+
+          <div class="hero-btn">
+            <button class="herobtnBrowse">Browse Projects</button>
+            <button class="herobtnLearn">Learn More</button>
+          </div>
+        </div>
+        <div class="scroll-indicator" aria-hidden="true">
+          <i class="fa-solid fa-angles-down"></i>
         </div>
       </section>
 
-      <section class="features container">
-        <div class="feature">
-          <i class="fa-solid fa-leaf"></i>
-          <h3>Organic Produce</h3>
-          <p>Pure, fresh, and responsibly sourced crops.</p>
-        </div>
-        <div class="feature">
-          <i class="fa-solid fa-seedling"></i>
-          <h3>Smart Farming</h3>
-          <p>Empowering farmers with modern agricultural tech.</p>
-        </div>
-        <div class="feature">
-          <i class="fa-solid fa-globe"></i>
-          <h3>Global Reach</h3>
-          <p>Connecting producers to markets worldwide.</p>
-        </div>
-      </section>
-
-      <section class="stats">
-        <div class="container stats-container">
-          <div class="stat">
-            <span class="stat-number" data-target="1200">0</span>
-            <p>Farmers Connected</p>
+      <!-- Features -->
+      <section class="features" aria-labelledby="featuresHeading">
+        <h2 id="featuresHeading" class="sr-only">Features</h2>
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">
+            <i class="fa-solid fa-microchip"></i>
           </div>
-          <div class="stat">
-            <span class="stat-number" data-target="350">0</span>
-            <p>Products Listed</p>
-          </div>
-          <div class="stat">
-            <span class="stat-number" data-target="98">0</span>
-            <p>Communities Served</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="testimonials">
-        <div class="container">
-          <h2>What Our Clients Say</h2>
-          <div class="testimonial-content">
-            <img class="testimonial-avatar" alt="Client photo" />
-            <h3 id="testimonialName"></h3>
-            <p id="testimonialRole" class="role"></p>
-            <p id="testimonialText" class="text"></p>
-          </div>
-          <div class="dots">
-            <span class="dot" data-index="0"></span>
-            <span class="dot" data-index="1"></span>
-            <span class="dot" data-index="2"></span>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <!-- About Page -->
-    <main id="aboutPage" class="page">
-      <section class="about container">
-        <h2>About AgriMarket</h2>
-        <p>
-          We’re building the future of sustainable agriculture through
-          technology, transparency, and trust.
-        </p>
-
-        <div class="tabs">
-          <button class="tab-btn active" data-tab="mission">Our Mission</button>
-          <button class="tab-btn" data-tab="vision">Our Vision</button>
-          <button class="tab-btn" data-tab="team">Our Team</button>
-        </div>
-
-        <div id="mission" class="tab-panel active">
+          <h3>Advanced Technology</h3>
           <p>
-            Empowering local farmers and ensuring everyone gets access to fresh
-            produce.
+            Harnessing data and AI for efficient resource management and crop
+            monitoring.
           </p>
         </div>
-        <div id="vision" class="tab-panel">
-          <p>To become the most trusted agricultural marketplace globally.</p>
-        </div>
-        <div id="team" class="tab-panel">
+
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">
+            <i class="fa-solid fa-seedling"></i>
+          </div>
+          <h3>Organic Services</h3>
           <p>
-            Our diverse team works tirelessly to improve the way food moves
-            across the world.
+            100% organic farming practices ensuring the highest quality produce.
           </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">
+            <i class="fa-solid fa-arrows-spin"></i>
+          </div>
+          <h3>Sustainable Systems</h3>
+          <p>
+            Eco-friendly methods that protect our environment for future
+            generations.
+          </p>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section class="about" id="about" aria-labelledby="aboutHeading">
+        <h2 id="aboutHeading" class="sr-only">About FourPillars</h2>
+        <div class="about-container">
+          <div class="about-image">
+            <img
+              src="./assets/images/african-man-harvesting-vegetables.jpg"
+              alt="Farmer harvesting vegetables"
+            />
+          </div>
+
+          <div class="about-content">
+            <label class="tag" aria-hidden="true">Welcome to FourPillars – Your Ultimate Destination</label>
+            <h3>Agriculture & Organic Product Farm</h3>
+            <p>
+              Discover the Power of Naturally Produced and Sustainably Grown
+              Produce. From farm to table, we prioritize wellness and quality.
+            </p>
+
+            <ul class="about-list">
+              <li><i aria-hidden="true">✔</i> Fresh, organic, and naturally grown produce</li>
+              <li><i aria-hidden="true">✔</i> Sustainable farming methods to protect our environment</li>
+              <li><i aria-hidden="true">✔</i> A wide variety of seasonal and nutritious products</li>
+            </ul>
+
+            <a href="#" class="btn discover">Discover More</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Offer Section -->
+      <section class="offer-section">
+        <div class="offer-header">
+          <h2>What We Offer</h2>
+          <p>Explore our diverse range of organic products, carefully selected and sustainably produced.</p>
+        </div>
+
+        <div class="offer-grid">
+          <div class="offer-card">
+            <img src="./assets/images/brown-bulls-standing-dry-grass-barn.jpg" alt="Livestock" />
+            <div class="offer-content">
+              <span class="offer-tag">Livestock</span>
+              <h3>Livestock Products</h3>
+              <div class="offer-hover">
+                <p>High-quality, ethically raised livestock products.</p>
+                <button class="offer-btn">Learn More <i class="fa-solid fa-arrow-right"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="offer-card">
+            <img src="./assets/images/front-view-vegetable.jpg" alt="Produce" />
+            <div class="offer-content">
+              <span class="offer-tag">Produce</span>
+              <h3>Fresh Vegetables</h3>
+              <div class="offer-hover">
+                <p>Fresh, organic vegetables grown responsibly and harvested for peak flavor.</p>
+                <button class="offer-btn">Learn More <i class="fa-solid fa-arrow-right"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="offer-card">
+            <img src="./assets/images/view-allergens-commonly-found-dairy.jpg" alt="Dairy" />
+            <div class="offer-content">
+              <span class="offer-tag">Dairy</span>
+              <h3>Dairy Products</h3>
+              <div class="offer-hover">
+                <p>Wholesome milk, cheese, and yogurt sourced from trusted organic dairy farms.</p>
+                <button class="offer-btn">Learn More <i class="fa-solid fa-arrow-right"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stats -->
+      <section class="stats" aria-label="Statistics">
+        <div class="stat">
+          <i class="fas fa-box" aria-hidden="true"></i>
+          <h2 class="counter" data-target="5800">0</h2>
+          <p>Agricultural Products</p>
+        </div>
+        <div class="stat">
+          <i class="fas fa-users" aria-hidden="true"></i>
+          <h2 class="counter" data-target="100">0</h2>
+          <p>Satisfied Clients</p>
+        </div>
+        <div class="stat">
+          <i class="fas fa-handshake" aria-hidden="true"></i>
+          <h2 class="counter" data-target="120">0</h2>
+          <p>Trusted Collaborations</p>
+        </div>
+        <div class="stat">
+          <i class="fas fa-seedling" aria-hidden="true"></i>
+          <h2 class="counter" data-target="37">0</h2>
+          <p>Expert Farmers</p>
+        </div>
+      </section>
+
+      <!-- Testimonials -->
+      <section class="testimonials" aria-labelledby="testimonialsHeading">
+        <h2 id="testimonialsHeading">What Our Customers Say</h2>
+        <p>Don’t just take our word for it, hear from our satisfied customers</p>
+
+        <div class="testimonial-container">
+          <button id="prev" aria-label="Previous testimonial"><i class="fas fa-chevron-left"></i></button>
+          <div class="testimonial" aria-live="polite"></div>
+          <button id="next" aria-label="Next testimonial"><i class="fas fa-chevron-right"></i></button>
+        </div>
+
+        <form id="testimonial-form" aria-label="Submit a testimonial">
+          <label for="name" class="sr-only">Your Name</label>
+          <input type="text" id="name" placeholder="Your Name" required />
+
+          <label for="role" class="sr-only">Your Role</label>
+          <input type="text" id="role" placeholder="Your Role" required />
+
+          <label for="photo" class="sr-only">Profile Image URL</label>
+          <input type="url" id="photo" placeholder="Profile Image URL" required />
+
+          <label for="message" class="sr-only">Your Testimonial</label>
+          <textarea id="message" placeholder="Your Testimonial" required></textarea>
+
+          <button type="submit">Add Testimonial</button>
+        </form>
+      </section>
+
+      <!-- Projects -->
+      <section class="projects" id="projects" aria-labelledby="projectsHeading">
+        <p class="subheading">Recently Completed</p>
+        <h2 id="projectsHeading">Explore Projects</h2>
+
+        <div class="projects-grid">
+          <div class="project-card" data-project="1" role="button" tabindex="0" aria-pressed="false">
+            <img src="./assets/images/young-farmer-holding-basket-with-vegetables-from-his-farm.jpg" alt="Easy Harvesting" />
+            <div class="project-overlay"><h3>Easy Harvesting</h3></div>
+          </div>
+
+          <div class="project-card" data-project="2" role="button" tabindex="0" aria-pressed="false">
+            <img src="./assets/images/countryside-workers-out-field.jpg" alt="Agriculture Farming" />
+            <div class="project-overlay"><h3>Agriculture Farming</h3></div>
+          </div>
+
+          <div class="project-card" data-project="3" role="button" tabindex="0" aria-pressed="false">
+            <img src="./assets/images/farm-worker-happy-see-non-gmo-vegetable-plantation-crop-yields-organically-growing-fresh-healthy-way-without-using-herbicides-eco-friendly-bio-agricultural-greenhouse-farm.jpg" alt="Ecological Farming" />
+            <div class="project-overlay"><h3>Ecological Farming</h3></div>
+          </div>
+
+          <div class="project-card" data-project="4" role="button" tabindex="0" aria-pressed="false">
+            <img src="./assets/images/front-view-male-researcher-biotechnology-laboratory-with-petri-dish.jpg" alt="Organic Solutions" />
+            <div class="project-overlay"><h3>Organic Solutions</h3></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why choose -->
+      <section class="why-choose" id="why-choose">
+        <div class="choose-container">
+          <div class="choose-image">
+            <img src="./assets/images/business-man-holding-clipboard-with-why-choose-us-question.jpg" alt="Agriculture professional" />
+            <div class="image-tag"><i class="fa-solid fa-user-tie" aria-hidden="true"></i><span>Agriculture Professional Leader</span></div>
+          </div>
+
+          <div class="choose-content">
+            <p class="subheading">Our Farm Benefits</p>
+            <h2>Why Choose FourPillars Farm</h2>
+            <p>FourPillars Farm offers premium-quality produce, dairy, and more, all grown and harvested with care.</p>
+
+            <ul class="choose-list">
+              <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Quality Organic Food</li>
+              <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Professional Farmers</li>
+              <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Quality Products</li>
+            </ul>
+
+            <button class="btn-discover">Discover More</button>
+          </div>
         </div>
       </section>
     </main>
 
     <!-- Footer -->
-    <footer>
-      <div class="container">
-        <form class="newsletter-form">
-          <input type="email" placeholder="Enter your email" required />
-          <button type="submit" class="btn">Subscribe</button>
+    <footer class="footer" role="contentinfo">
+      <div class="footer-container">
+        <div class="footer-col brand">
+          <h3 class="footer-logo"><i class="fa-solid fa-leaf" aria-hidden="true"></i> FourPillars</h3>
+          <p>Your trusted source for fresh, organic, and sustainably grown agricultural products.</p>
+          <div class="social-icons" aria-hidden="true">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Our Services</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Products</h4>
+          <ul>
+            <li><a href="#">Fresh Vegetables</a></li>
+            <li><a href="#">Organic Fruits</a></li>
+            <li><a href="#">Dairy Products</a></li>
+            <li><a href="#">Livestock</a></li>
+            <li><a href="#">Grains & Seeds</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col contact">
+          <h4>Contact Us</h4>
+          <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i> 123 Farm Road, Green Valley, CA 95012</p>
+          <p><i class="fa-solid fa-phone" aria-hidden="true"></i> +1 (555) 123-4567</p>
+          <p><i class="fa-solid fa-envelope" aria-hidden="true"></i> info@fourpillars.com</p>
+        </div>
+      </div>
+
+      <div class="newsletter" aria-labelledby="newsletterHeading">
+        <h4 id="newsletterHeading">Subscribe to Our Newsletter</h4>
+        <p>Get the latest updates on new products and upcoming sales</p>
+        <form class="newsletter-form" aria-label="Subscribe to newsletter">
+          <label for="newsletter-email" class="sr-only">Email</label>
+          <input id="newsletter-email" type="email" placeholder="Enter your email" required />
+          <button type="submit">Subscribe</button>
         </form>
-        <p>© <span id="year"></span> AgriMarket. All rights reserved.</p>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 FourPillars. All rights reserved. Made with care for sustainable agriculture.</p>
       </div>
     </footer>
 
-    <script src="./script.js"></script>
+    <!-- Back to top -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+      <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+    </button>
+
+    <!-- Project Modal -->
+    <div class="project-modal" id="projectModal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Project details">
+      <div class="modal-content" role="document">
+        <button class="close-modal" aria-label="Close modal">&times;</button>
+        <img id="modalImage" src="" alt="" />
+        <h3 id="modalTitle"></h3>
+        <p id="modalDesc"></p>
+      </div>
+    </div>
+
+    <script src="./script.js" defer></script>
   </body>
 </html>

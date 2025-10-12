@@ -1,161 +1,261 @@
-(() => {
-  const navbar = document.getElementById('navbar');
-  const mobileMenu = document.getElementById('mobileMenu');
-  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-  const pages = document.querySelectorAll('.page');
-  const navLinks = document.querySelectorAll('[data-page]');
-  const yearEl = document.getElementById('year');
-  const statsSection = document.querySelector('.stats');
+/* script.js — refactored, performant, accessible */
+document.addEventListener("DOMContentLoaded", () => {
+  // ----- Cache DOM elements -----
+  const header = document.querySelector(".header");
+  const hero = document.querySelector(".hero");
+  const backToTop = document.getElementById("backToTop");
+  const statsSection = document.querySelector(".stats");
+  const counters = document.querySelectorAll(".counter");
+  const projectCards = document.querySelectorAll(".project-card");
+  const modal = document.getElementById("projectModal");
+  const modalImage = document.getElementById("modalImage");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalDesc = document.getElementById("modalDesc");
+  const closeModalBtn = document.querySelector(".close-modal");
+  const testimonialDiv = document.querySelector(".testimonial");
+  const prevBtn = document.getElementById("prev");
+  const nextBtn = document.getElementById("next");
+  const testimonialForm = document.getElementById("testimonial-form");
 
-  // Scroll Navbar
-  const throttle = (fn, delay) => {
-    let last = 0;
-    return (...args) => {
-      const now = Date.now();
-      if (now - last > delay) {
-        last = now;
-        fn(...args);
-      }
-    };
-  };
-  window.addEventListener(
-    'scroll',
-    throttle(() => {
-      navbar.classList.toggle('scrolled', window.scrollY > 50);
-    }, 100)
-  );
-
-  // Mobile Menu
-  mobileMenuBtn.addEventListener('click', () => {
-    mobileMenu.classList.toggle('active');
-    const icon = mobileMenuBtn.querySelector('i');
-    icon.className = mobileMenu.classList.contains('active')
-      ? 'fa-solid fa-times'
-      : 'fa-solid fa-bars';
-  });
-
-  function closeMobileMenu() {
-    mobileMenu.classList.remove('active');
-    mobileMenuBtn.querySelector('i').className = 'fa-solid fa-bars';
-  }
-
-  // Navigation Pages
-  function showPage(pageName) {
-    pages.forEach(p => p.classList.remove('active'));
-    document.getElementById(`${pageName}Page`).classList.add('active');
-
-    navLinks.forEach(link => link.classList.remove('active'));
-    document.querySelectorAll(`[data-page="${pageName}"]`).forEach(l => l.classList.add('active'));
-
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  navLinks.forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      const page = link.getAttribute('data-page');
-      showPage(page);
-      closeMobileMenu();
-    });
-  });
-
-  // Stats Counter
-  function animateCounter(element, target) {
-    let current = 0;
-    const increment = target / 60;
-    const duration = 2000;
-    const stepTime = duration / 60;
-
-    const timer = setInterval(() => {
-      current += increment;
-      if (current >= target) {
-        element.textContent = target.toLocaleString();
-        clearInterval(timer);
-      } else {
-        element.textContent = Math.floor(current).toLocaleString();
-      }
-    }, stepTime);
-  }
-
-  let statsAnimated = false;
-  const statsObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting && !statsAnimated) {
-        document.querySelectorAll('.stat-number').forEach((stat, i) => {
-          const target = +stat.getAttribute('data-target');
-          setTimeout(() => animateCounter(stat, target), i * 100);
-        });
-        statsAnimated = true;
-      }
-    });
-  }, { threshold: 0.3 });
-
-  if (statsSection) statsObserver.observe(statsSection);
-
-  // Testimonials
-  const testimonials = [
+  // ----- State -----
+  let countersStarted = false;
+  let testimonials = [
     {
-      name: 'Sarah Johnson',
-      role: 'Restaurant Owner',
-      image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80',
-      text: 'The quality of produce from AgriMarket is exceptional. My customers always comment on how fresh and flavorful everything tastes.',
+      name: "Michael Chen",
+      role: "Health Enthusiast",
+      photo: "https://randomuser.me/api/portraits/men/32.jpg",
+      quote:
+        "I've been buying organic products for years, but FourPillars stands out. Knowing exactly where my food comes from and how it’s grown gives me peace of mind.",
     },
     {
-      name: 'Michael Chen',
-      role: 'Health Enthusiast',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80',
-      text: 'AgriMarket stands out for its freshness and transparency. Knowing where my food comes from gives me peace of mind.',
+      name: "Sara James",
+      role: "Nutritionist",
+      photo: "https://randomuser.me/api/portraits/women/47.jpg",
+      quote: "FourPillars’ produce is always fresh and of great quality. My clients love the taste difference!",
     },
     {
-      name: 'Emily Rodriguez',
-      role: 'Home Chef',
-      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80',
-      text: 'The variety and freshness are amazing. I love supporting sustainable farming while feeding my family well.',
+      name: "John Carter",
+      role: "Restaurant Owner",
+      photo: "https://randomuser.me/api/portraits/men/20.jpg",
+      quote: "Their reliable delivery and product quality keep my business running smoothly every week.",
     },
   ];
 
-  let currentTestimonial = 0;
-  const updateTestimonial = i => {
-    const t = testimonials[i];
-    document.querySelector('.testimonial-avatar').src = t.image;
-    document.getElementById('testimonialName').textContent = t.name;
-    document.getElementById('testimonialRole').textContent = t.role;
-    document.getElementById('testimonialText').textContent = t.text;
+  // Restore testimonials from localStorage (optional)
+  try {
+    const stored = JSON.parse(localStorage.getItem("fp_testimonials") || "null");
+    if (Array.isArray(stored)) testimonials = stored.concat(testimonials);
+  } catch (e) {
+    // ignore parse errors
+  }
+  let testimonialIndex = 0;
 
-    document.querySelectorAll('.dot').forEach((dot, idx) => {
-      dot.classList.toggle('active', idx === i);
-    });
+  // ----- Scroll handling (single listener) -----
+  function onScroll() {
+    const y = window.scrollY;
+    const heroHeight = hero ? hero.offsetHeight : 600;
+
+    header.classList.toggle("scrolled", y > heroHeight - 500);
+    backToTop.classList.toggle("show", y > 300);
+  }
+  window.addEventListener("scroll", throttle(onScroll, 80));
+  onScroll(); // initial check
+
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  // ----- Counter animation using requestAnimationFrame -----
+  function animateCounter(el, target, duration = 1400) {
+    const startTime = performance.now();
+    const start = 0;
+    function step(now) {
+      const progress = Math.min((now - startTime) / duration, 1);
+      el.textContent = Math.floor(progress * target);
+      if (progress < 1) requestAnimationFrame(step);
+      else el.textContent = target;
+    }
+    requestAnimationFrame(step);
+  }
+
+  // IntersectionObserver to start counters when visible
+  if (statsSection && counters.length) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !countersStarted) {
+            counters.forEach((c) => {
+              const t = parseInt(c.getAttribute("data-target"), 10) || 0;
+              animateCounter(c, t);
+            });
+            countersStarted = true;
+            io.disconnect();
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+    io.observe(statsSection);
+  }
+
+  // ----- Testimonials UI -----
+  function renderTestimonial(i, withTransition = true) {
+    const t = testimonials[i];
+    testimonialDiv.classList.remove("fade-in");
+    // small delay for transition effect
+    setTimeout(() => {
+      // build accessible DOM rather than raw innerHTML for text nodes
+      testimonialDiv.innerHTML = "";
+      const img = document.createElement("img");
+      img.src = t.photo;
+      img.alt = t.name;
+      const textWrap = document.createElement("div");
+      textWrap.className = "text";
+      const h3 = document.createElement("h3");
+      h3.textContent = t.name;
+      const role = document.createElement("p");
+      role.className = "role";
+      role.textContent = t.role;
+      const quote = document.createElement("p");
+      quote.className = "quote";
+      quote.textContent = `"${t.quote}"`;
+      textWrap.append(h3, role, quote);
+      testimonialDiv.append(img, textWrap);
+      if (withTransition) testimonialDiv.classList.add("fade-in");
+    }, withTransition ? 120 : 0);
+  }
+
+  renderTestimonial(testimonialIndex);
+
+  prevBtn.addEventListener("click", () => {
+    testimonialIndex = (testimonialIndex - 1 + testimonials.length) % testimonials.length;
+    renderTestimonial(testimonialIndex);
+  });
+  nextBtn.addEventListener("click", () => {
+    testimonialIndex = (testimonialIndex + 1) % testimonials.length;
+    renderTestimonial(testimonialIndex);
+  });
+
+  testimonialForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const name = document.getElementById("name").value.trim();
+    const role = document.getElementById("role").value.trim();
+    const photo = document.getElementById("photo").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    if (!name || !role || !photo || !message) {
+      alert("Please fill all testimonial fields.");
+      return;
+    }
+
+    const newT = { name, role, photo, quote: message };
+    testimonials.unshift(newT); // show newest first
+    // persist lightly
+    try {
+      localStorage.setItem("fp_testimonials", JSON.stringify(testimonials.slice(0, 10)));
+    } catch (e) { /* ignore storage errors */ }
+
+    testimonialForm.reset();
+    testimonialIndex = 0;
+    renderTestimonial(testimonialIndex);
+    alert("Thanks — testimonial added!");
+  });
+
+  // ----- Projects modal (accessible) -----
+  const projectData = {
+    1: {
+      title: "Easy Harvesting",
+      image:
+        "./assets/images/young-farmer-holding-basket-with-vegetables-from-his-farm.jpg",
+      desc:
+        "Our easy harvesting techniques help farmers maximize yield with minimal effort. Experience smart agriculture with optimized tools and strategies.",
+    },
+    2: {
+      title: "Agriculture Farming",
+      image: "./assets/images/countryside-workers-out-field.jpg",
+      desc:
+        "We specialize in sustainable agriculture, focusing on organic methods that nurture both crops and soil for long-term productivity.",
+    },
+    3: {
+      title: "Ecological Farming",
+      image:
+        "./assets/images/farm-worker-happy-see-non-gmo-vegetable-plantation-crop-yields-organically-growing-fresh-healthy-way-without-using-herbicides-eco-friendly-bio-agricultural-greenhouse-farm.jpg",
+      desc:
+        "Our ecological farming projects integrate natural cycles and biodiversity, creating a self-sustaining farming ecosystem.",
+    },
+    4: {
+      title: "Organic Solutions",
+      image:
+        "./assets/images/front-view-male-researcher-biotechnology-laboratory-with-petri-dish.jpg",
+      desc:
+        "From composting to natural pest control, we deliver innovative organic solutions that make farming cleaner and more efficient.",
+    },
   };
 
-  document.querySelectorAll('.dot').forEach(dot => {
-    dot.addEventListener('click', () => {
-      currentTestimonial = +dot.dataset.index;
-      updateTestimonial(currentTestimonial);
+  // focus trap helpers
+  let lastFocused = null;
+  function openModal(project) {
+    modalImage.src = project.image;
+    modalImage.alt = project.title;
+    modalTitle.textContent = project.title;
+    modalDesc.textContent = project.desc;
+    modal.classList.add("active");
+    modal.querySelector(".modal-content").classList.add("scale-in");
+    modal.setAttribute("aria-hidden", "false");
+    lastFocused = document.activeElement;
+    closeModalBtn.focus();
+    document.body.style.overflow = "hidden";
+  }
+  function closeModal() {
+    modal.classList.remove("active");
+    modal.querySelector(".modal-content").classList.remove("scale-in");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+    if (lastFocused) lastFocused.focus();
+  }
+
+  projectCards.forEach((card) => {
+    card.addEventListener("click", () => {
+      const id = card.dataset.project;
+      const pd = projectData[id];
+      if (!pd) return;
+      openModal(pd);
+    });
+    // keyboard support
+    card.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        card.click();
+      }
     });
   });
 
-  // Tabs
-  document.querySelectorAll('.tab-btn').forEach(btn => {
-    btn.addEventListener('click', e => {
-      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      document.querySelectorAll('.tab-panel').forEach(panel => panel.classList.remove('active'));
-      document.getElementById(btn.dataset.tab).classList.add('active');
-    });
+  closeModalBtn.addEventListener("click", closeModal);
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) closeModal();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal.classList.contains("active")) closeModal();
   });
 
-  // Newsletter
-  document.querySelector('.newsletter-form')?.addEventListener('submit', e => {
-    e.preventDefault();
-    const email = e.target.querySelector('input').value;
-    alert(`Thank you for subscribing, ${email}!`);
-    e.target.reset();
-  });
-
-  // Year
-  yearEl.textContent = new Date().getFullYear();
-
-  // Init
-  updateTestimonial(0);
-})();
+  // ----- Utility: throttle -----
+  function throttle(fn, wait) {
+    let last = 0;
+    let timer = null;
+    return function (...args) {
+      const now = Date.now();
+      const remaining = wait - (now - last);
+      if (remaining <= 0) {
+        if (timer) { clearTimeout(timer); timer = null; }
+        last = now;
+        fn.apply(this, args);
+      } else if (!timer) {
+        timer = setTimeout(() => {
+          last = Date.now();
+          timer = null;
+          fn.apply(this, args);
+        }, remaining);
+      }
+    };
+  }
+});
