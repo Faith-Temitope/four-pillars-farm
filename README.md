@@ -24,7 +24,7 @@ A modern, responsive website built to promote sustainable farming and showcase F
 
 ## 📦 Setup
 ```bash
-git clone https://github.com/yourusername/four-pillars-farm.git
+git clone https://github.com/Faith-Temitope/four-pillars-farm.git
 cd four-pillars-farm
 npm install
 npm run dev
