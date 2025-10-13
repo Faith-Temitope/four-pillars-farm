@@ -1,0 +1,94 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.body {
+    line-height: 1.3rem;
+    text-decoration: none;
+    font-family: 'inter', sans-serif;
+}
+
+.icons {
+    width: 35px;
+}
+
+.section1 {
+    background-color: #efeded;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.section1-content {
+    display: flex;
+    gap: 10rem;
+
+}
+
+.section-farmer {
+    position: relative;
+    width: 500px;
+}
+
+.section-farmer img {
+    width: 400px;
+    border-radius: 15px;
+}
+
+.introduction {
+    position: relative;
+    width: 400px;
+
+}
+
+.introduction h4 {
+    position: absolute;
+    top: 0;
+    color: #3a9b43;
+    font-style: italic;
+    margin-top: 0.3rem;
+
+}
+
+.introduction h1 {
+    text-transform: capitalize;
+    margin-top: 1.5rem;
+}
+
+.introduction p {
+    margin-top: 1.5rem;
+
+}
+
+.overlap-img {
+    position: absolute;
+    bottom: 2%;
+    right: 2%;
+    width: 200px;
+    height: 200px;
+}
+
+.example {
+    max-width: 100%;
+    border-radius: 15px;
+}
+
+.intro-btn {
+    margin-top: 2rem;
+    display: inline-block;
+    text-transform: capitalize;
+    text-decoration: none;
+    background-color: #3a9b43;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 15px;
+    width: 170px;
+}
+
+.intro-btn i {
+    margin-left: 1px;
+    transition: 0.2s ease-in-out all;
+}
