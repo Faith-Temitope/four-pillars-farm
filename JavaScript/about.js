@@ -32,15 +32,12 @@ btns.forEach((btn) => {
 
     btns.forEach((button) => button.classList.remove("active"));
 
-    // Step 2: Add 'active' class to the clicked button
     this.classList.add("active");
 
-    // Step 3: Hide ALL content sections first
     valueSection.style.display = "none";
     storySection.style.display = "none";
     missionSection.style.display = "none";
 
-    // Step 4: Show the appropriate section based on which button was clicked
     if (this.id === "value") {
       valueSection.style.display = "block";
     } else if (this.id === "story") {
@@ -49,4 +46,75 @@ btns.forEach((btn) => {
       missionSection.style.display = "block";
     }
   });
+});
+
+// const counters = document.querySelectorAll("#counter");
+// let started = false;
+
+// function startCounters() {
+//   counters.forEach((counter) => {
+//     const target = +counter.dataset.target;
+//     const speed = 100; // higher = slower
+
+//     const update = () => {
+//       const value = +counter.innerText;
+//       const step = target / speed;
+
+//       if (value < target) {
+//         counter.innerText = Math.ceil(value + step);
+//         setTimeout(update, 30);
+//       } else {
+//         counter.innerText = target;
+//       }
+//     };
+
+//     update();
+//   });
+// }
+
+// window.addEventListener("scroll", () => {
+//   const section = document.querySelector(".section3");
+//   const position = section.getBoundingClientRect().top;
+//   const screen = window.innerHeight;
+
+//   if (position < screen && !started) {
+//     started = true;
+//     startCounters();
+//   }
+// });
+
+let numbers = document.querySelectorAll(".counter");
+let speed = 200;
+
+function startCounters() {
+  numbers.forEach((counter) => {
+    const updateCount = () => {
+      const target = +counter.getAttribute("data-target");
+      const count = +counter.innerHTML;
+      const inc = target / speed;
+
+      if (count < target) {
+        counter.innerHTML = Math.ceil(count + inc);
+        setTimeout(updateCount, 50);
+      } else {
+        counter.innerHTML = target;
+      }
+    };
+    updateCount();
+  });
+}
+
+// test without scroll trigger
+startCounters();
+
+let started = false;
+window.addEventListener("scroll", () => {
+  const section = document.querySelector(".section3");
+  const position = section.getBoundingClientRect().top;
+  const screenHeight = window.innerHeight;
+
+  if (position < screenHeight && !started) {
+    started = true;
+    startCounters();
+  }
 });
