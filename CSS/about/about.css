@@ -96,6 +96,9 @@
     transition: 0.2s ease-in-out all;
 }
 
+/* End of Section1 */
+
+
 /* section 2 content */
 .section2 {
     display: flex;
@@ -122,14 +125,14 @@
 
 
 
-.section3-Btn {
+.section2-Btn {
     display: flex;
     justify-content: center;
     gap: 10px;
     margin-bottom: 1rem;
 }
 
-.section3-Btn a {
+.section2-Btn a {
     padding: 5px 20px;
     display: inline-block;
     text-transform: capitalize;
@@ -163,17 +166,17 @@
     width: 250px;
     height: 250px;
     text-align: center;
-    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
     border-radius: 15px;
     transition: 0.3s ease-in-out all;
 }
 
 
 
-.card i {
-    color: white;
-    background-color: #4CAF50;
-    padding: .5rem;
+.card>div {
+    color: #2f8f3a;
+    background-color: white;
+    /* padding: 3rem; */
     border-radius: 20px;
 }
 
@@ -287,6 +290,7 @@
     margin: .5rem 0;
 }
 
+/* mision subsection display as none by default */
 .mission {
     display: none;
 
@@ -310,15 +314,24 @@
     border-radius: 5px;
 }
 
+.icon-holder>div {
+    display: block;
+    background-color: rgb(223, 219, 219);
+    padding: 5px;
+    border-radius: 50%;
+}
+
 .mission p {
     margin-top: 1rem;
     width: 600px;
 }
 
-.section3-Btn .active {
+.section2-Btn .active {
     background-color: #4CAF50;
     color: white;
 }
+
+/* End of Section2 */
 
 /* Section 3 */
 .section3 {
@@ -337,6 +350,7 @@
 .achievement-content {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 1.5rem;
 }
 
@@ -345,6 +359,8 @@
     color: #4CAF50;
     transition: 10s ease-in-out all;
 }
+
+/* End of Section 3 */
 
 /* sectin 4 */
 
@@ -810,3 +826,316 @@
 }
 
 /* ...existing code... */
+
+
+@media (max-width: 768px) {
+
+    /* section */
+    .section1-content {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .section1-content>div {
+        width: 350px;
+        /* padding: 0; */
+    }
+
+    .section-farmer img {
+        width: 100%;
+    }
+
+    /* end of section 1 */
+
+    /* section 2 */
+    .section2-content {
+        width: 100%;
+        overflow-x: hidden;
+        text-align: center;
+    }
+
+    .section2-content h4 {
+        font-size: 12px;
+    }
+
+    .section2-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .section2-content p {
+        text-align: center;
+        width: 100%;
+        font-size: 16px;
+        padding: 0 16px;
+        margin: 0 auto;
+    }
+
+    .section2-Btn a {
+        padding: 5px 15px;
+    }
+
+    /* value subsection */
+    .values {
+        display: flex;
+        justify-content: center;
+        padding: 0 16px;
+        /* horizontal breathing room */
+    }
+
+    .value-content {
+        padding: 1rem 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        /* single column on small screens */
+        grid-template-areas:
+            "one"
+            "two"
+            "three"
+            "four";
+        gap: 1rem;
+        /* smaller gap for mobile */
+        width: 100%;
+        max-width: 720px;
+    }
+
+    .card {
+        width: 100%;
+        height: auto;
+        /* allow content to dictate height */
+        padding: 1rem;
+        text-align: left;
+        /* left align for better readability */
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+        border-radius: 12px;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    }
+
+    .card>div {
+        /* icon wrapper */
+        flex: 0 0 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+    }
+
+    .icons {
+        width: 40px;
+        height: auto;
+        display: block;
+    }
+
+    .card h3 {
+        margin: 0;
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+    .card p {
+        margin: 6px 0 0;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        color: #444;
+    }
+
+    /* Story subsection */
+    .timeline {
+        padding: 1rem;
+    }
+
+    /* Move timeline line to left side instead of center */
+    .timeline::before {
+        left: 30px;
+        transform: none;
+    }
+
+    /* Stack items vertically */
+    .timeline-item {
+        grid-template-columns: 1fr;
+        grid-template-areas: 'content';
+        gap: 20px;
+        margin-bottom: 40px;
+    }
+
+    /* Adjust content boxes */
+    .timeline-content {
+        width: 100%;
+        max-width: calc(100% - 60px);
+        /* account for timeline line */
+        padding: 1.5rem;
+        margin-left: 60px;
+        box-sizing: border-box;
+    }
+
+    /* Reset all content alignment to left */
+    .first,
+    .second,
+    .third,
+    .fourth {
+        grid-area: content;
+        text-align: left;
+    }
+
+    /* Move dots to left side */
+    .timeline-dot {
+        left: 30px;
+        transform: none;
+        width: 16px;
+        height: 16px;
+        border-width: 3px;
+    }
+
+    /* Adjust text sizes */
+    .timeline-year {
+        font-size: 1.25rem;
+    }
+
+    .timeline-content h4 {
+        font-size: 1.1rem;
+        margin: .4rem 0;
+    }
+
+    .timeline-content p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    /* mission subsection */
+    .mission>div {
+        padding: 1rem;
+        margin: 0 1rem 1rem;
+        width: calc(100% - 2rem);
+        box-sizing: border-box;
+    }
+
+    .icon-holder {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .icon-holder>div {
+        padding: 8px;
+    }
+
+    .icon-holder h2 {
+        font-size: 1.25rem;
+        margin: 0.5rem 0;
+    }
+
+    .icons {
+        width: 32px;
+        height: 32px;
+    }
+
+    .mission p {
+        width: 100%;
+        margin-top: 0.75rem;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        text-align: center;
+    }
+
+    /* end of section 2 */
+
+    /* section */
+    .section3 {
+        padding: 2rem 1rem;
+    }
+
+    .achievement {
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+
+    .achievement-content {
+        gap: 1rem;
+    }
+
+    .achievement-content img.icons {
+        width: 40px;
+        height: 40px;
+    }
+
+    .achievement-content h3 {
+        font-size: 28px;
+        margin: 0;
+    }
+
+    .achievement-content h4 {
+        font-size: 16px;
+        margin: 0;
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* end of section 3 */
+
+    .testimony {
+        width: 350px;
+        margin-top: 96px;
+        gap: 22px;
+    }
+
+    .testimony h2 {
+        font-size: 36px;
+    }
+
+    .testimonial-card {
+        padding: 28px 26px;
+    }
+
+    .testimonial-btn {
+        right: 18px;
+        bottom: 18px;
+        width: 48px;
+        height: 48px;
+    }
+
+    .testimonial-rating i {
+        font-size: 14px;
+    }
+
+    .testimonials-bg .bg-word {
+        font-size: 170px;
+        letter-spacing: 8px;
+    }
+
+    .testimonials-bg {
+        padding-bottom: 70px;
+        padding-top: 50px;
+    }
+
+    .testimonials-bg .view-all-btn {
+        padding: 12px 26px;
+        font-size: 15px;
+    }
+
+    .team-cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 16px;
+    }
+
+    .card-info {
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+        padding: 10px 12px;
+    }
+
+    .card-name {
+        font-size: 15px;
+    }
+
+    .card-role {
+        font-size: 13px;
+    }
+
+    .team-card {
+        min-height: 260px;
+    }
+}
