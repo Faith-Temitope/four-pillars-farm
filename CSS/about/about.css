@@ -15,6 +15,7 @@
     width: 35px;
 }
 
+/* Section 1 */
 .section1 {
     background-color: #efeded;
     display: flex;
@@ -72,9 +73,10 @@
     height: 200px;
 }
 
-.example {
+.img-overlay {
     max-width: 100%;
     border-radius: 15px;
+    background-color: transparent;
 }
 
 .intro-btn {
@@ -148,7 +150,7 @@
 .value-content {
     padding: 2rem 4rem;
     display: grid;
-    grid-template-columns: repeat (2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-template-areas: 'one two'
         'three four';
     gap: 4rem;
@@ -213,12 +215,12 @@
 
 .timeline::before {
     content: '';
+    background: #4CAF50;
     position: absolute;
     left: 50%;
     top: 0;
     bottom: 5%;
     width: 3px;
-    background: #4CAF50;
     transform: translateX(-50%);
 }
 
@@ -339,7 +341,9 @@
 }
 
 .achievement-content h3 {
+    font-size: 20px;
     color: #4CAF50;
+    transition: 10s ease-in-out all;
 }
 
 /* sectin 4 */
@@ -405,6 +409,7 @@
     justify-content: center;
     align-items: center;
     margin: 40px 4%;
+    overflow-x: hidden;
 }
 
 /* card */
@@ -422,6 +427,25 @@
     box-shadow: 0 6px 18px rgba(6, 20, 25, 0.04);
     line-height: 1.8;
     font-size: 16px;
+}
+
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateX(0);
+    }
+
+    80% {
+        opacity: 1;
+        transform: translateX(90%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(100%);
+    }
 }
 
 /* testimonial text */
@@ -523,7 +547,7 @@
     top: 50%;
     transform: translate(-50%, -50%);
     /* slightly raised */
-    font-size: 12rem;
+    font-size: 11.5rem;
     /* line-height: 0.9; */
     font-weight: 800;
     color: rgba(128, 128, 128, 0.226);
@@ -642,7 +666,7 @@
     gap: 28px;
     max-width: 1200px;
     margin: 0 auto;
-    align-items: stretch;
+    /* align-items: stretch; */
 }
 
 .team-card {
@@ -725,7 +749,7 @@
     border-radius: 8px;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.28));
     color: #fff;
-    width: calc(100% - 44px);
+    /* width: calc(100% - 44px); */
     box-sizing: border-box;
     backdrop-filter: blur(2px);
 }
