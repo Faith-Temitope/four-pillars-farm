@@ -1,0 +1,488 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  color: #333;
+  background: rgb(0, 56, 0);
+  line-height: 1.6;
+  animation: fadeIn 1.2s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  color:darkgreen;
+  background: rgba(227, 227, 227, 0.9);
+  backdrop-filter: blur(4px);
+  transition: background 0.3s ease-in-out;
+}
+
+.logo {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  overflow: hidden;
+}
+
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2.5rem;
+}
+
+.navbar .nav-links a {
+  text-decoration: none;
+  color: darkgreen;
+  transition: color 0.3s;
+}
+
+.navbar .nav-links a:hover {
+  color: #4caf50;
+  text-decoration: underline yellow wavy;
+  text-underline-offset: 4px;
+}
+
+/* Hero */
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.178), rgba(0, 0, 0, 0.164)),
+    url("/Images/dan-meyers-IQVFVH0ajag-unsplash.jpg") no-repeat center/cover;
+  text-align: center;
+  padding: 8rem 2rem;
+  height: 400px;
+  color: rgb(30, 30, 30);
+  animation: fadeIn 2s ease-in-out;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  animation: slideInDown 1.5s;
+}
+.hero-text h4 {
+  font-size: larger;
+  font-weight: 750;
+  color: rgb(0, 0, 0);
+}
+.hero-text p {
+  margin: 1rem 0;
+}
+
+.btn button {
+  text-size-adjust: 20px;
+  margin-top: 40px;
+  border: 2px solid white;
+  display: flex;
+  position: relative;
+  background: rgb(0, 56, 0);
+  padding: 20px;
+  color: white;
+  text-decoration: none;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.btn:hover button {
+  padding: 22px;
+  color: black;
+  background: lightgreen;
+  border: 2px solid black;
+}
+
+/* Services */
+.services h2 {
+  color: white;
+  margin-bottom: 3.5rem;
+  text-decoration: underline yellow wavy;
+  text-underline-offset: 10px;
+}
+.services {
+  padding: 4rem 2rem;
+  text-align: center;
+  border-radius: 20px;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.service-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.card {
+  width: 400px;
+  background: white;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* About */
+.about {
+  background-color: white;
+  display: flex;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.move {
+  display: flex;
+  margin: 30px;
+}
+.about img {
+  border-radius: 20px;
+  width: 500px;
+  max-width: 400px;
+  animation: fadeInLeft 2s;
+}
+
+.about-text h2 {
+  font-family: cursive;
+  color: yellow;
+  margin-left: 30px;
+  margin-bottom: 30px;
+}
+.about-text h1 {
+  margin-left: 30px;
+  color: #4caf50;
+}
+.about-text p {
+  margin-left: 30px;
+  font-size: large;
+}
+
+/* ================================
+   PROMO BANNER SECTION
+================================ */
+
+.promo-banner {
+  position: relative;
+  background: url(/Images/background\ green.avif) no-repeat center/cover;
+  color: #fff;
+  overflow: hidden;
+  padding: 3.25rem 0;
+  margin-top: 0;
+  border: none;
+}
+
+.promo-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0, 100, 0, 0.4), rgba(0, 0, 0, 0.3));
+  opacity: 0.7;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+.promo-content {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 2rem;
+}
+
+.promo-eyebrow {
+  font-family: cursive;
+  color: yellow;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  margin: 30px;
+  font-size: 2.02rem;
+}
+
+.promo-title {
+  color: rgb(255, 255, 255);
+  margin: 30px;
+  font-weight: 600;
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  line-height: 1.02;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
+  transform-origin: left;
+  animation: promoSlide 900ms cubic-bezier(0.22, 0.9, 0.36, 1) both;
+}
+
+/* ================================
+   BUTTON STYLES
+================================ */
+
+.btn {
+  margin: 30px;
+  display: inline-block;
+  text-decoration: none;
+  padding: 0.8rem 1.45rem;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  outline: none;
+}
+
+.promo-cta a {
+  border: 2px solid white;
+}
+
+.btn-cta {
+  background: darkgreen;
+  color: white;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
+  font-size: 1.02rem;
+  border-radius: 14px;
+  padding: 1rem 1.8rem;
+  display: inline-block;
+  animation: btnFloat 3s ease-in-out infinite;
+}
+
+.btn-cta:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 128, 0, 0.4);
+}
+
+.btn-cta:hover {
+  color: black;
+  background: lightgreen;
+  transform: translateY(-4px);
+  box-shadow: 0 18px 32px rgba(0, 0, 0, 0.25);
+  border: 2px solid black;
+}
+
+.promo-cta {
+  justify-self: end;
+}
+
+/* ================================
+   RESPONSIVE STYLES (FIXED)
+================================ */
+@media (max-width: 900px) {
+  /* Navbar */
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 5rem 1rem;
+    height: auto;
+    background-position: center;
+  }
+
+  .hero-text h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-text h4 {
+    font-size: 1.1rem;
+  }
+
+  .btn button {
+    padding: 14px;
+    font-size: 0.9rem;
+  }
+
+  /* Services */
+  .service-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  /* About */
+  .about {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about img {
+    width: 80%;
+    max-width: 350px;
+  }
+
+  .about-text {
+    margin-top: 1rem;
+  }
+
+  /* Promo section */
+  .promo-content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 2rem 1rem;
+  }
+
+  .promo-eyebrow,
+  .promo-title {
+    margin: 0;
+  }
+
+  .promo-cta {
+    justify-self: center;
+    margin-top: 1rem;
+  }
+
+  /* Footer */
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-links ul {
+    padding: 0;
+  }
+
+  .footer-logo i {
+    margin: 0 6px;
+  }
+}
+
+/* ================================
+   OPTIONAL ANIMATIONS
+================================ */
+
+@keyframes promoSlide {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes btnFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* Footer */
+footer {
+  background: rgb(0, 56, 0);
+  color: #ccc;
+  padding: 2rem;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.footer-links ul {
+  list-style: none;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #ccc;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #4caf50;
+}
+
+footer h4 {
+  color: white;
+  margin-bottom: 1rem;
+  text-decoration: underline yellow wavy;
+  text-underline-offset: 10px;
+}
+
+footer p {
+  margin: 0.3rem 0;
+}
+
+.footer-logo i {
+  font-size: 24px;
+  color: #ffffff;
+  margin: 0 8px;
+  transition: color 0.3s ease;
+}
+
+.footer-logo i:hover {
+  color: yellow;
+  animation: fa-flip 0.8s ease;
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 1rem;
+  border-top: 1px solid #333;
+  padding-top: 1rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
