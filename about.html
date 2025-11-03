@@ -1,281 +1,484 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/CSS/about/about.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About - Four Pillars Agriculture</title>
+    <link rel="stylesheet" href="/CSS/style.css" />
+    <link rel="stylesheet" href="./CSS/about/about.css" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
+  <body>
+    <!-- Transparent Header in Hero -->
+    <header class="header heroHeader">
+      <div class="HeaderLeft">
+        <div>
+          <i class="fa-solid fa-leaf"></i>
+        </div>
+        <span>FourPillars</span>
+      </div>
+
+      <div class="HeaderRight">
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="index.html#projects">Services</a>
+          <a href="index.html#why-choose">Products</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <button><a href="#contact">Get Started</a></button>
+      </div>
+    </header>
+
+    <!-- Fixed White Header -->
+    <header class="header fixedHeader">
+      <div class="HeaderLeft">
+        <div>
+          <i class="fa-solid fa-leaf"></i>
+        </div>
+        <span>FourPillars</span>
+      </div>
+
+      <div class="HeaderRight">
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="index.html#projects">Services</a>
+          <a href="index.html#why-choose">Products</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <button><a href="#contact">Get Started</a></button>
+      </div>
+    </header>
+
     <!-- Section 1 -->
     <section class="section1">
-        <div class="section1-content">
-            <div class="section-farmer">
-                <img src="/assets/About/Section1.png" alt="">
-                <div class="overlap-img">
-                    <img class="img-overlay" src="/assets/About/Section1-2.png" alt="">
-                </div>
-            </div>
-            <div class="introduction">
-                <h4>get to know us</h4>
-                <h1>Growing with Purpose since 2020</h1>
-                <p>At Stacey Farms, we believe in cultivating not just crops but community and sustainability.
-                    Established in 2020, our
-                    farm is a family-owned and operated venture dedicated to producing high-quality agricultural
-                    products while maintaining
-                    eco-friendly practices.</p>
-                <p>Our journey began with a simple vision: to create a sustainable farming model that respects the land,
-                    supports local
-                    communities, and delivers fresh, nutritious produce to families across the region.</p>
-                <a class="intro-btn" href="">Discover more <i id="intro-icon" class="fa-solid fa-arrow-right"></i></a>
-
-            </div>
+      <div class="section1-content">
+        <div class="section-farmer">
+          <img src="./assets/About/Section1.png" alt="Farmer" />
+          <div class="overlap-img">
+            <img
+              class="img-overlay"
+              src="./assets/About/Section1-2.png"
+              alt="Farm"
+            />
+          </div>
         </div>
+        <div class="introduction">
+          <h4>get to know us</h4>
+          <h1>Growing with Purpose since 2020</h1>
+          <p>
+            At FourPillars, we believe in cultivating not just crops but
+            community and sustainability. Established in 2020, our farm is a
+            family-owned and operated venture dedicated to producing
+            high-quality agricultural products while maintaining eco-friendly
+            practices.
+          </p>
+          <p>
+            Our journey began with a simple vision: to create a sustainable
+            farming model that respects the land, supports local communities,
+            and delivers fresh, nutritious produce to families across the
+            region.
+          </p>
+          <a class="intro-btn" href="#our-values"
+            >Discover more
+            <i id="intro-icon" class="fa-solid fa-arrow-right"></i
+          ></a>
+        </div>
+      </div>
     </section>
     <!-- End of section1 -->
 
-    <section class="section2">
-        <div class="section2-content">
-            <h4>OUR PRINCIPLES</h4>
-            <h1>What we stand for</h1>
-            <p>Our values guide every decision we make, from seed selection to harvest, ensuring we deliver quality
-                while protecting
-                our planet.</p>
-        </div>
-        <div class="section2-Btn">
-            <a id="value" class="bit" href="">Our Value</a>
-            <a id="story" class="bit" href="">Our Story</a>
-            <a id="mission" class="bit" href="">Our Mission</a>
-        </div>
+    <section class="section2" id="our-values">
+      <div class="section2-content">
+        <h4>OUR PRINCIPLES</h4>
+        <h1>What we stand for</h1>
+        <p>
+          Our values guide every decision we make, from seed selection to
+          harvest, ensuring we deliver quality while protecting our planet.
+        </p>
+      </div>
+      <div class="section2-Btn">
+        <a id="value" class="bit" href="#our-values">Our Value</a>
+        <a id="story" class="bit" href="#our-story">Our Story</a>
+        <a id="mission" class="bit" href="#our-mission">Our Mission</a>
+      </div>
 
-        <div class="values">
-            <div class="value-content">
-                <div class="card one">
-                    <div><img class="icons" src="./assets/About/sustainability_icon.png" alt=""></div>
-                    <h3>sustainability</h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic repudiandae sit illo vero placeat,
-                        debitis laboriosam, iusto ab laborum odio, nobis impedit vel ducimus fuga!</p>
-                </div>
-                <div class="card two">
-                    <div><img class="icons" src="./assets/About/community_icon.png" alt=""></div>
-                    <h3>Community</h3>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem alias debitis, eaque similique
-                        optio
-                        explicabo dolorum architecto, earum odio sunt nulla labore quo commodi tenetur.</p>
-                </div>
-                <div class="card three">
-                    <div><img class="icons" src="./assets/About/quality_icon.png" alt=""></div>
-                    <h3>Quanlity</h3>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia at reprehenderit rem ut,
-                        repellat
-                        magni explicabo totam non doloremque culpa minima quidem itaque harum deleniti!</p>
-                </div>
-                <div class="card four">
-                    <div><img class="icons" src="./assets/About/intergrity.png" alt=""></div>
-                    <h3>Intergrity</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, laborum in? Recusandae ex
-                        voluptatibus
-                        voluptates, est culpa omnis sed deleniti placeat harum quod cupiditate numquam.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="tab-content" id="journey">
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content first">
-                        <div class="timeline-year">2020</div>
-                        <h4>The Beginning</h4>
-                        <p>Stacey Farms was founded with 10 acres and a dream to revolutionize sustainable agriculture.
-                        </p>
-                    </div>
-                    <div class="timeline-dot"></div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content second">
-                        <div class="timeline-year">2021</div>
-                        <h4>Organic Certification</h4>
-                        <p>Achieved 100% organic certification and expanded to 25 acres of farmland.</p>
-                    </div>
-                    <div class="timeline-dot"></div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content third">
-                        <div class="timeline-year">2023</div>
-                        <h4>Community Impact</h4>
-                        <p>Launched educational programs and reached 500+ satisfied customers across the region.</p>
-                    </div>
-                    <div class="timeline-dot"></div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content fourth">
-                        <div class="timeline-year">2024</div>
-                        <h4>Growth & Excellence</h4>
-                        <p>Expanded to 50+ acres and won multiple awards for sustainable farming practices.</p>
-                    </div>
-                    <div class="timeline-dot"></div>
-                </div>
-            </div>
-        </div>
-
-        <div class="mission">
+      <div class="values">
+        <div class="value-content">
+          <div class="card one">
             <div>
-                <div class="icon-holder">
-                    <div><img class="icons" src="./assets/About/leaf_icon.png" alt=""></div>
-                    <h2>Our Mission</h2>
-                </div>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur mollitia, fugit rerum aut, odit
-                    eligendi illo quis
-                    dolorem obcaecati eaque, possimus nihil amet? Non, ut?</p>
+              <img
+                class="icons"
+                src="./assets/About/sustainability_icon.png"
+                alt="Sustainability"
+              />
             </div>
+            <h3>Sustainability</h3>
+            <p>
+              We practice eco-friendly farming methods that preserve natural
+              resources and protect the environment for future generations
+              through responsible land management.
+            </p>
+          </div>
+          <div class="card two">
             <div>
-                <div class="icon-holder">
-                    <div><img class="icons" src="./assets/About/tractor.png" alt=""></div>
-                    <h2>Our Mission</h2>
-                </div>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur mollitia, fugit rerum aut, odit
-                    eligendi illo quis
-                    dolorem obcaecati eaque, possimus nihil amet? Non, ut?</p>
+              <img
+                class="icons"
+                src="./assets/About/community_icon.png"
+                alt="Community"
+              />
             </div>
+            <h3>Community</h3>
+            <p>
+              Building strong relationships with local communities through
+              education, support, and providing access to fresh, healthy produce
+              at fair prices.
+            </p>
+          </div>
+          <div class="card three">
             <div>
-                <div class="icon-holder">
-                    <div><img class="icons" src="./assets/About/farmbasket_icon.png" alt=""></div>
-                    <h2>Our Mission</h2>
-                </div>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur mollitia, fugit rerum aut, odit
-                    eligendi illo quis
-                    dolorem obcaecati eaque, possimus nihil amet? Non, ut?</p>
+              <img
+                class="icons"
+                src="./assets/About/quality_icon.png"
+                alt="Quality"
+              />
             </div>
+            <h3>Quality</h3>
+            <p>
+              Delivering premium organic products through careful cultivation,
+              rigorous quality control, and commitment to excellence in every
+              harvest.
+            </p>
+          </div>
+          <div class="card four">
+            <div>
+              <img
+                class="icons"
+                src="./assets/About/intergrity.png"
+                alt="Integrity"
+              />
+            </div>
+            <h3>Integrity</h3>
+            <p>
+              Operating with transparency and honesty in all our practices, from
+              seed to sale, ensuring trust and accountability in everything we
+              do.
+            </p>
+          </div>
         </div>
+      </div>
+
+      <div class="tab-content" id="journey">
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-content first">
+              <div class="timeline-year">2020</div>
+              <h4>The Beginning</h4>
+              <p>
+                FourPillars was founded with 10 acres and a dream to
+                revolutionize sustainable agriculture.
+              </p>
+            </div>
+            <div class="timeline-dot"></div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-content second">
+              <div class="timeline-year">2021</div>
+              <h4>Organic Certification</h4>
+              <p>
+                Achieved 100% organic certification and expanded to 25 acres of
+                farmland.
+              </p>
+            </div>
+            <div class="timeline-dot"></div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-content third">
+              <div class="timeline-year">2023</div>
+              <h4>Community Impact</h4>
+              <p>
+                Launched educational programs and reached 500+ satisfied
+                customers across the region.
+              </p>
+            </div>
+            <div class="timeline-dot"></div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-content fourth">
+              <div class="timeline-year">2024</div>
+              <h4>Growth & Excellence</h4>
+              <p>
+                Expanded to 50+ acres and won multiple awards for sustainable
+                farming practices.
+              </p>
+            </div>
+            <div class="timeline-dot"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mission">
+        <div>
+          <div class="icon-holder">
+            <h2>Sustainable Agriculture</h2>
+            <div>
+              <img
+                class="icons"
+                src="./assets/About/leaf_icon.png"
+                alt="Leaf"
+              />
+            </div>
+          </div>
+          <p>
+            To lead the agricultural industry in sustainable farming practices,
+            using innovative techniques that protect our environment while
+            producing the highest quality organic products.
+          </p>
+        </div>
+        <div>
+          <div class="icon-holder">
+            <h2>Empowering Farmers</h2>
+            <div>
+              <img
+                class="icons"
+                src="./assets/About/tractor.png"
+                alt="Tractor"
+              />
+            </div>
+          </div>
+          <p>
+            Supporting and educating local farmers with modern tools and
+            knowledge to implement sustainable practices that improve yields and
+            protect the land for future generations.
+          </p>
+        </div>
+        <div>
+          <div class="icon-holder">
+            <h2>Quality Products</h2>
+            <div>
+              <img
+                class="icons"
+                src="./assets/About/farmbasket_icon.png"
+                alt="Farm Basket"
+              />
+            </div>
+          </div>
+          <p>
+            Delivering fresh, nutritious, and certified organic produce to
+            families and businesses, ensuring every product meets our rigorous
+            standards of excellence and sustainability.
+          </p>
+        </div>
+      </div>
     </section>
-    <!-- End of sectin 2 -->
+    <!-- End of section 2 -->
 
     <!-- Section3 -->
     <section class="section3">
-        <div class="achievement">
-            <div class="achievement-content">
-                <img class="icons" src="./assets/About/excellence_icon.png" alt="">
-                <h3>5</h3>
-                <h4>Years of Excellence</h4>
-            </div>
-            <div class="achievement-content">
-                <img class="icons" src="./assets/About/leaf_icon.png" alt="">
-                <h3 class="counter" data-target="100"></h3>
-                <h4>Organic Products</h4>
-            </div>
-            <div class="achievement-content">
-                <img class="icons" src="./assets/About/dedication_icon.png" alt="">
-                <h3 class="counter" data-target="25"></h3>
-                <h4>Dedicated Farmers</h4>
-            </div>
-            <div class="achievement-content">
-                <img class="icons" src="./assets/About/partner_icon.png" alt="">
-                <h3 class="counter" data-target="50"></h3>
-                <h4>Expert Partners</h4>
-            </div>
-
+      <div class="achievement">
+        <div class="achievement-content">
+          <img
+            class="icons"
+            src="./assets/About/excellence_icon.png"
+            alt="Excellence"
+          />
+          <h3>5</h3>
+          <h4>Years of Excellence</h4>
         </div>
+        <div class="achievement-content">
+          <img
+            class="icons"
+            src="./assets/About/leaf_icon.png"
+            alt="Products"
+          />
+          <h3 class="counter" data-target="100">0</h3>
+          <h4>Organic Products</h4>
+        </div>
+        <div class="achievement-content">
+          <img
+            class="icons"
+            src="./assets/About/dedication_icon.png"
+            alt="Farmers"
+          />
+          <h3 class="counter" data-target="25">0</h3>
+          <h4>Dedicated Farmers</h4>
+        </div>
+        <div class="achievement-content">
+          <img
+            class="icons"
+            src="./assets/About/partner_icon.png"
+            alt="Partners"
+          />
+          <h3 class="counter" data-target="50">0</h3>
+          <h4>Expert Partners</h4>
+        </div>
+      </div>
     </section>
     <!-- End of Section3 -->
 
     <section class="section4">
-        <div class="testimony">
-            <h3>Our Testimonials</h3>
-            <p>What They're Talking About Stacey Farms</p>
+      <div class="testimony">
+        <h3>Our Testimonials</h3>
+        <p>What They're Talking About FourPillars</p>
+      </div>
+
+      <div class="testimonials-content">
+        <div class="testimonial-card">
+          <p class="testimonial-text"></p>
+          <p class="testimonial-author"></p>
+          <div class="testimonial-rating"></div>
+          <button class="testimonial-btn" aria-label="Next testimonial">
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
         </div>
+      </div>
 
-        <div class="testimonials-content">
-            <div class="testimonial-card">
-                <p class="testimonial-text">
-
-                </p>
-                <p class="testimonial-author">Bonnie Tolbert</p>
-                <div class="testimonial-rating">
-
-                </div>
-                <button class="testimonial-btn" aria-label="Next testimonial">
-                    <i class="fa-solid fa-arrow-right"></i>
-                </button>
-            </div>
-        </div>
-
-        <div class="testimonials-bg">
-            <span class="bg-word">AGRICULTURE</span>
-            <a class="view-all-btn" href="#">View All Testimonials</a>
-        </div>
-
+      <div class="testimonials-bg">
+        <span class="bg-word">AGRICULTURE</span>
+        <a class="view-all-btn" href="index.html#testimonials"
+          >View All Testimonials</a
+        >
+      </div>
     </section>
-
 
     <!-- Team section -->
     <section class="team-section">
-        <div class="team-header">
-            <h3>Our Team</h3>
-            <p>Meet Our Farmers</p>
+      <div class="team-header">
+        <h3>Our Team</h3>
+        <p>Meet Our Farmers</p>
+      </div>
+
+      <div class="team-cards">
+        <div class="team-card">
+          <div class="card-media">
+            <img src="./assets/About/farmer1.jpg" alt="Kevin Smith" />
+            <button class="card-badge" aria-label="profile action">
+              <i class="fa-solid fa-leaf"></i>
+            </button>
+          </div>
+          <div class="card-info">
+            <h4 class="card-name">Kevin Smith</h4>
+            <p class="card-role">Senior Farmer</p>
+          </div>
         </div>
 
-        <div class="team-cards">
-            <div class="team-card">
-                <div class="card-media">
-                    <img src="/assets/About/farmer1.jpg" alt="Kevin Smith">
-                    <button class="card-badge" aria-label="profile action">
-                        <i class="fa-solid fa-leaf"></i>
-                    </button>
-                </div>
-                <div class="card-info">
-                    <h4 class="card-name">Kevin Smith</h4>
-                    <p class="card-role">Senior Farmer</p>
-                </div>
-            </div>
-
-            <div class="team-card">
-                <div class="card-media">
-                    <img src="/assets/About/farmer2.jpg" alt="Jessica Brown">
-                    <button class="card-badge" aria-label="profile action">
-                        <i class="fa-solid fa-leaf"></i>
-                    </button>
-                </div>
-                <div class="card-info">
-                    <h4 class="card-name">Jessica Brown</h4>
-                    <p class="card-role">Agricultural Expert</p>
-                </div>
-            </div>
-
-            <div class="team-card">
-                <div class="card-media">
-                    <img src="/assets/About/farmer3.jpg" alt="David Martin">
-                    <button class="card-badge" aria-label="profile action">
-                        <i class="fa-solid fa-leaf"></i>
-                    </button>
-                </div>
-                <div class="card-info">
-                    <h4 class="card-name">David Martin</h4>
-                    <p class="card-role">Sustainability Director</p>
-                </div>
-            </div>
+        <div class="team-card">
+          <div class="card-media">
+            <img src="./assets/About/farmer2.jpg" alt="Jessica Brown" />
+            <button class="card-badge" aria-label="profile action">
+              <i class="fa-solid fa-leaf"></i>
+            </button>
+          </div>
+          <div class="card-info">
+            <h4 class="card-name">Jessica Brown</h4>
+            <p class="card-role">Agricultural Expert</p>
+          </div>
         </div>
+
+        <div class="team-card">
+          <div class="card-media">
+            <img src="./assets/About/farmer3.jpg" alt="David Martin" />
+            <button class="card-badge" aria-label="profile action">
+              <i class="fa-solid fa-leaf"></i>
+            </button>
+          </div>
+          <div class="card-info">
+            <h4 class="card-name">David Martin</h4>
+            <p class="card-role">Sustainability Director</p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <script type="module" src="./JavaScript/about.js"></script>
-</body>
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="footer" id="contact">
+      <div class="footer-container">
+        <div class="footer-col brand">
+          <h3 class="footer-logo">
+            <i class="fa-solid fa-leaf"></i> FourPillars
+          </h3>
+          <p>
+            Your trusted source for fresh, organic, and sustainably grown
+            agricultural products.
+          </p>
+          <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
 
-</html>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="index.html#projects">Our Services</a></li>
+            <li><a href="index.html#why-choose">Products</a></li>
+            <li><a href="index.html">Blog</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
 
+        <div class="footer-col">
+          <h4>Products</h4>
+          <ul>
+            <li><a href="index.html">Fresh Vegetables</a></li>
+            <li><a href="index.html">Organic Fruits</a></li>
+            <li><a href="index.html">Dairy Products</a></li>
+            <li><a href="index.html">Livestock</a></li>
+            <li><a href="index.html">Grains & Seeds</a></li>
+          </ul>
+        </div>
 
-</body>
+        <div class="footer-col contact">
+          <h4>Contact Us</h4>
+          <p>
+            <i class="fa-solid fa-location-dot"></i> 123 Farm Road, Green
+            Valley, CA 95012
+          </p>
+          <p><i class="fa-solid fa-phone"></i> +1 (555) 123-4567</p>
+          <p><i class="fa-solid fa-envelope"></i> info@fourpillars.com</p>
+        </div>
+      </div>
 
+      <div class="newsletter">
+        <h4>Subscribe to Our Newsletter</h4>
+        <p>Get the latest updates on new products and upcoming sales</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Enter your email" required />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          © 2025 FourPillars. All rights reserved. Made with care for
+          sustainable agriculture.
+        </p>
+      </div>
+    </footer>
+
+    <!-- ===================== BACK TO TOP BUTTON ===================== -->
+    <button class="back-to-top" id="backToTop">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="./JavaScript/about.js"></script>
+  </body>
 </html>
