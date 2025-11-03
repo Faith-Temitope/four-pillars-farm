@@ -1,4 +1,4 @@
-/* Reset */
+/* Reset Eug */
 * {
   margin: 0;
   padding: 0;
@@ -63,6 +63,7 @@ nav {
 
 nav a {
   color: rgb(235, 235, 235);
+  text-decoration: none;
 }
 
 nav a:hover {
@@ -86,6 +87,7 @@ nav a:hover {
 
 button a {
   color: white;
+  text-decoration: none;
 }
 
 button a:hover {
@@ -347,14 +349,6 @@ button a:hover {
 .promo-cta {
   justify-self: end;
 }
-
-
-
-
-
-
-
-
 
 
 
@@ -657,8 +651,8 @@ footer {
 footer h4 {
   color: white;
   margin-bottom: 1rem;
-  text-decoration: underline yellow wavy;
-  text-underline-offset: 10px;
+  /* text-decoration: underline yellow wavy;
+  text-underline-offset: 10px; */
 }
 
 footer p {
