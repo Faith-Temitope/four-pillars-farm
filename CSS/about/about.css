@@ -1,7 +1,21 @@
+/* Prevent horizontal overflow - ADD AT THE VERY TOP */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+}
+
+
+section {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    /* background-color: #6f6f6f; */
 }
 
 .body {
@@ -154,6 +168,7 @@
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
     border-radius: 15px;
     transition: transform 0.6s ease-in-out, box-shadow 0.6s ease-in-out; /* Slowed down transition */
+    /* background-color: #004400; */
 }
 
 .card > div {
@@ -383,6 +398,9 @@
     .testimony h2 {
         font-size: 36px;
     }
+    .card {
+        background-color: #005f00;
+    }
 }
 
 @media (min-width: 1200px) {
@@ -472,6 +490,10 @@
         width: 48px;
         height: 48px;
     }
+
+    .card {
+        background-color: #005f00;
+    }
 }
 
 @media (max-width: 520px) {
@@ -486,6 +508,10 @@
 
     .testimonial-rating i {
         font-size: 14px;
+    }
+
+    .card {
+        background-color: #005f00;
     }
 }
 
@@ -548,6 +574,11 @@
         padding-bottom: 70px;
         padding-top: 50px;
     }
+
+    .card {
+        background-color: #005f00;
+        color: white;
+    }
 }
 
 @media (max-width: 768px) {
@@ -578,6 +609,11 @@
     .testimonials-bg .view-all-btn {
         padding: 10px 20px;
         border-radius: 28px;
+    }
+
+    .card {
+        background-color: #005f00;
+        color: white;
     }
 }
 
@@ -728,6 +764,11 @@
         width: 48px;
         height: 48px;
     }
+
+    .card {
+        background-color: #005f00;
+        color: white;
+    }
 }
 
 @media (max-width: 640px) {
@@ -755,4 +796,1008 @@
     .team-card {
         min-height: 260px;
     }
+
+    .card {
+        background-color: #005f00;
+        color: white;
+    }
+}
+
+/* ===== ABOUT PAGE RESPONSIVE ===== */
+
+/* Tablet - iPad (768px - 1024px) */
+@media (max-width: 1024px) {
+  .section1-content {
+    gap: 5rem;
+  }
+
+  .section-farmer {
+    width: 400px;
+  }
+
+  .section-farmer img {
+    width: 350px;
+  }
+
+  .introduction {
+    width: 350px;
+  }
+
+  .value-content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .timeline-content {
+    width: 400px;
+  }
+
+  .mission p {
+    width: 500px;
+  }
+
+  .team-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card {
+        background-color: #005f00;
+        color: white;
+    }
+}
+
+/* Mobile & Small Tablets (max-width: 768px) */
+@media (max-width: 768px) {
+  /* Section 1 */
+  .section1 {
+    height: auto;
+    padding: 3rem 0;
+  }
+
+  .section1-content {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0 5%;
+  }
+
+  .section-farmer {
+    width: 100%;
+  }
+
+  .section-farmer img {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .overlap-img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .introduction {
+    width: 100%;
+    padding-top: 2rem;
+  }
+
+  .introduction h1 {
+    font-size: 1.5rem;
+  }
+
+  .introduction h4 {
+    position: relative;
+    margin-bottom: 1rem;
+  }
+
+  /* Section 2 */
+  .section2-content {
+    width: 90%;
+    padding: 0 20px;
+  }
+
+  .section2-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .section2-content p {
+    font-size: 0.9rem;
+  }
+
+  .section2-Btn {
+    flex-wrap: wrap;
+    padding: 0 20px;
+  }
+
+  .section2-Btn a {
+    padding: 8px 15px;
+    font-size: 0.85rem;
+  }
+
+  /* Values Cards */
+  .values {
+    padding: 0 20px;
+  }
+
+  .value-content {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+
+  .card {
+    width: 100%;
+    height: auto;
+    padding: 1.5rem;
+  }
+
+  .card h3 {
+    font-size: 1.1rem;
+  }
+
+  .card p {
+    font-size: 0.9rem;
+  }
+
+  /* Timeline */
+  .timeline {
+    padding: 1rem;
+  }
+
+  .timeline::before {
+    left: 20px;
+  }
+
+  .timeline-item {
+    grid-template-columns: 1fr;
+    grid-template-areas: 'content';
+    margin-bottom: 30px;
+  }
+
+  .timeline-content {
+    width: 100%;
+    max-width: 100%;
+    padding: 1.5rem;
+    margin-left: 50px;
+  }
+
+  .first,
+  .second,
+  .third,
+  .fourth {
+    grid-area: content;
+    text-align: left;
+  }
+
+  .timeline-dot {
+    left: 20px;
+    transform: none;
+  }
+
+  .timeline-year {
+    font-size: 1.2rem;
+  }
+
+  /* Mission */
+  .mission > div {
+    padding: 1.5rem;
+    margin: 0 20px 1rem;
+  }
+
+  .icon-holder {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .mission p {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+
+  /* Section 3 */
+  .section3 {
+    padding: 2rem 20px;
+  }
+
+  .achievement {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .achievement-content {
+    width: 100%;
+  }
+
+  .achievement-content h3 {
+    font-size: 24px;
+  }
+
+  /* Testimonials */
+  .testimony {
+    padding: 0 20px;
+    margin: 2rem 0;
+  }
+
+  .testimony p {
+    font-size: 18px;
+  }
+
+  .testimonials-content {
+    height: auto;
+    margin: 30px 5%;
+  }
+
+  .testimonial-card {
+    padding: 25px 20px;
+  }
+
+  .testimonial-btn {
+    right: 10px;
+    bottom: 10px;
+    width: 48px;
+    height: 48px;
+  }
+
+  .testimonials-bg {
+    padding: 30px 0 60px;
+  }
+
+  .testimonials-bg .bg-word {
+    font-size: 6rem;
+  }
+
+  /* Team Section */
+  .team-section {
+    height: auto;
+    padding: 2rem 20px;
+  }
+
+  .team-header {
+    margin: 2rem 0;
+  }
+
+  .team-header p {
+    font-size: 18px;
+  }
+
+  .team-cards {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .team-card {
+    min-height: 280px;
+  }
+
+  /* Header Mobile */
+  .header {
+    height: auto;
+    padding: 15px 4%;
+    flex-wrap: wrap;
+  }
+
+  .HeaderRight {
+    width: 100%;
+    margin-top: 10px;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .HeaderRight button {
+    width: 100%;
+  }
+}
+
+/* Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .section1-content {
+    padding: 0 20px;
+  }
+
+  .introduction h1 {
+    font-size: 1.3rem;
+  }
+
+  .introduction h4 {
+    font-size: 0.85rem;
+  }
+
+  .intro-btn {
+    width: 100%;
+    text-align: center;
+    padding: 12px 20px;
+  }
+
+  .section2-content h1 {
+    font-size: 1.3rem;
+  }
+
+  .section2-Btn a {
+    font-size: 0.75rem;
+    padding: 6px 12px;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .card h3 {
+    font-size: 1rem;
+  }
+
+  .card p {
+    font-size: 0.85rem;
+  }
+
+  .timeline-content {
+    margin-left: 40px;
+    padding: 1rem;
+  }
+
+  .timeline-year {
+    font-size: 1.1rem;
+  }
+
+  .mission > div {
+    margin: 0 10px 1rem;
+    padding: 1rem;
+  }
+
+  .icon-holder h2 {
+    font-size: 1.1rem;
+  }
+
+  .mission p {
+    font-size: 0.85rem;
+  }
+
+  .achievement-content h3 {
+    font-size: 20px;
+  }
+
+  .achievement-content h4 {
+    font-size: 14px;
+  }
+
+  .testimony h3 {
+    font-size: 12px;
+  }
+
+  .testimony p {
+    font-size: 16px;
+  }
+
+  .testimonial-card {
+    padding: 20px 15px;
+    font-size: 14px;
+  }
+
+  .testimonials-bg .bg-word {
+    font-size: 4rem;
+  }
+
+  .testimonials-bg .view-all-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .team-header h3 {
+    font-size: 12px;
+  }
+
+  .team-header p {
+    font-size: 16px;
+  }
+
+  .card-name {
+    font-size: 14px;
+  }
+
+  .card-role {
+    font-size: 12px;
+  }
+
+  .back-to-top {
+    bottom: 15px;
+    right: 15px;
+    padding: 10px 11px;
+  }
+}
+
+/* Extra Small Mobile (max-width: 375px) */
+@media (max-width: 375px) {
+  .section-farmer img {
+    width: 100%;
+  }
+
+  .overlap-img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .introduction h1 {
+    font-size: 1.2rem;
+  }
+
+  .section2-content h1 {
+    font-size: 1.2rem;
+  }
+
+  .timeline-content {
+    margin-left: 35px;
+  }
+
+  .testimonials-bg .bg-word {
+    font-size: 3rem;
+  }
+}
+
+
+/* Smooth transitions for all responsive changes */
+/* * {
+  transition: all 0.3s ease;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+} */
+
+/* Prevent horizontal scroll */
+/* body {
+  overflow-x: hidden;
+} */
+
+/* Better touch targets for mobile */
+@media (max-width: 768px) {
+  button,
+  a,
+  .btn {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* ===== ABOUT PAGE FIXES ===== */
+
+/* iPad/Tablet (768px - 1024px) - FIX SECTION 1 OVERLAP */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .section1 {
+    padding: 4rem 5%;
+  }
+
+  .section1-content {
+    gap: 4rem;
+    padding: 0 3%;
+  }
+
+  .section-farmer {
+    width: 450px;
+  }
+
+  .section-farmer img {
+    width: 100%;
+  }
+
+  .overlap-img {
+    width: 180px;
+    height: 180px;
+    bottom: 5%;
+    right: 5%;
+  }
+
+  .introduction {
+    width: 400px;
+  }
+
+  .value-content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 2rem 2rem;
+  }
+
+  .card {
+    width: 100%;
+    height: auto;
+    min-height: 200px;
+  }
+
+  .timeline-content {
+    width: 380px;
+  }
+
+  .mission p {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .team-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+}
+
+/* Mobile & Tablets (max-width: 768px) - COMPREHENSIVE FIX */
+@media (max-width: 768px) {
+  /* Prevent horizontal scroll */
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  * {
+    max-width: 100%;
+  }
+
+  /* HEADER FIX - Compact version */
+  .header {
+    height: auto;
+    padding: 10px 4%;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .heroHeader {
+    position: relative;
+    background-color: #878787;
+  }
+
+  .fixedHeader {
+    position: fixed;
+    top: 0;
+  }
+
+  .HeaderLeft {
+    margin-bottom: 10px;
+  }
+
+  .HeaderRight {
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    width: 100%;
+  }
+
+  nav a {
+    font-size: 13px;
+    padding: 5px 10px;
+  }
+
+  .HeaderRight button {
+    width: auto;
+    padding: 8px 20px;
+    align-self: center;
+  }
+
+  /* SECTION 1 FIX - Better spacing and overlap */
+  .section1 {
+    height: auto;
+    padding: 140px 4% 3rem 4%; /* Add top padding for header */
+    width: 100vw;
+    overflow: hidden;
+  }
+
+  .section1-content {
+    flex-direction: column;
+    gap: 3rem;
+    padding: 0;
+    width: 100%;
+    align-items: center;
+  }
+
+  .section-farmer {
+    width: 100%;
+    max-width: 450px;
+    position: relative;
+    margin: 0 auto;
+  }
+
+  .section-farmer img {
+    width: 100%;
+    height: auto;
+  }
+
+  .overlap-img {
+    width: 140px;
+    height: 140px;
+    bottom: 8%;
+    right: 8%;
+  }
+
+  .img-overlay {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .introduction {
+    width: 100%;
+    max-width: 450px;
+    padding: 0;
+    position: relative;
+  }
+
+  .introduction h4 {
+    position: relative;
+    margin-bottom: 1rem;
+  }
+
+  .introduction h1 {
+    font-size: 1.8rem;
+    margin-top: 1rem;
+  }
+
+  .introduction p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .intro-btn {
+    display: inline-block;
+    width: auto;
+    margin-top: 1.5rem;
+  }
+
+  /* SECTION 2 FIX - Full width cards, no overflow */
+  .section2 {
+    width: 100vw;
+    overflow-x: hidden;
+    padding: 2rem 0;
+  }
+
+  .section2-content {
+    width: 90%;
+    max-width: 100%;
+    margin: 2rem auto;
+    padding: 0 5%;
+  }
+
+  .section2-content h1 {
+    font-size: 1.6rem;
+  }
+
+  .section2-content p {
+    font-size: 0.95rem;
+  }
+
+  .section2-Btn {
+    flex-wrap: wrap;
+    padding: 0 5%;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .section2-Btn a {
+    padding: 8px 18px;
+    font-size: 0.9rem;
+  }
+
+  /* VALUES CARDS - FIX OVERFLOW */
+  .values {
+    width: 100%;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  .value-content {
+    width: 100%;
+    padding: 2rem 5%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    box-sizing: border-box;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: auto;
+    padding: 1.5rem;
+    box-sizing: border-box;
+  }
+
+  .card h3 {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+  }
+
+  .card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .card > div {
+    margin-bottom: 0.5rem;
+  }
+
+  /* TIMELINE FIX */
+  .timeline {
+    width: 100%;
+    padding: 2rem 5%;
+    box-sizing: border-box;
+  }
+
+  .timeline::before {
+    left: 25px;
+  }
+
+  .timeline-item {
+    grid-template-columns: 1fr;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .timeline-content {
+    width: 100%;
+    max-width: 100%;
+    padding: 1.5rem;
+    margin-left: 55px;
+    box-sizing: border-box;
+  }
+
+  .first,
+  .second,
+  .third,
+  .fourth {
+    text-align: left;
+  }
+
+  .timeline-dot {
+    left: 25px;
+  }
+
+  .timeline-year {
+    font-size: 1.3rem;
+  }
+
+  .timeline-content h4 {
+    font-size: 1.1rem;
+  }
+
+  .timeline-content p {
+    font-size: 0.95rem;
+  }
+
+  /* MISSION FIX */
+  .mission {
+    width: 100%;
+    padding: 0 5%;
+    box-sizing: border-box;
+  }
+
+  .mission > div {
+    width: 100%;
+    padding: 1.5rem;
+    margin: 0 0 1.5rem 0;
+    box-sizing: border-box;
+  }
+
+  .icon-holder {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .icon-holder h2 {
+    font-size: 1.2rem;
+  }
+
+  .mission p {
+    width: 100%;
+    margin-top: 1rem;
+    font-size: 0.95rem;
+  }
+
+  /* SECTION 3 */
+  .section3 {
+    width: 100vw;
+    padding: 3rem 5%;
+    box-sizing: border-box;
+  }
+
+  .achievement {
+    flex-direction: column;
+    gap: 2.5rem;
+    width: 100%;
+  }
+
+  .achievement-content {
+    width: 100%;
+  }
+
+  /* TESTIMONIALS FIX */
+  .testimony {
+    width: 100%;
+    padding: 0 5%;
+    margin: 3rem 0 2rem;
+    box-sizing: border-box;
+  }
+
+  .testimonials-content {
+    width: 100%;
+    padding: 0 5%;
+    margin: 2rem 0;
+    height: auto;
+    box-sizing: border-box;
+  }
+
+  .testimonial-card {
+    width: 100%;
+    max-width: 100%;
+    padding: 2rem 1.5rem;
+    box-sizing: border-box;
+  }
+
+  .testimonials-bg {
+    width: 100vw;
+    padding: 2rem 0 4rem;
+    box-sizing: border-box;
+  }
+
+  .testimonials-bg .bg-word {
+    font-size: 5rem;
+  }
+
+  /* TEAM SECTION FIX */
+  .team-section {
+    width: 100vw;
+    height: auto;
+    padding: 3rem 5%;
+    box-sizing: border-box;
+  }
+
+  .team-cards {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    width: 100%;
+  }
+
+  .team-card {
+    width: 100%;
+    min-height: 300px;
+  }
+
+  /* FOOTER */
+  .footer {
+    width: 100vw;
+    padding: 3rem 5% 2rem;
+    box-sizing: border-box;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .newsletter {
+    width: 100%;
+    padding: 0 5%;
+    box-sizing: border-box;
+  }
+
+  .newsletter-form {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .newsletter-form input,
+  .newsletter-form button {
+    width: 100%;
+    border-radius: 25px;
+  }
+}
+
+/* Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  nav a {
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+
+  .section1 {
+    padding-top: 120px;
+  }
+
+  .section1-content {
+    gap: 2rem;
+  }
+
+  .overlap-img {
+    width: 110px;
+    height: 110px;
+  }
+
+  .introduction h1 {
+    font-size: 1.4rem;
+  }
+
+  .section2-content h1 {
+    font-size: 1.3rem;
+  }
+
+  .section2-Btn a {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+
+  .card {
+    padding: 1.2rem;
+  }
+
+  .card h3 {
+    font-size: 1.1rem;
+  }
+
+  .timeline-content {
+    margin-left: 45px;
+    padding: 1.2rem;
+  }
+
+  .mission > div {
+    padding: 1.2rem;
+  }
+
+  .icon-holder h2 {
+    font-size: 1rem;
+  }
+
+  .mission p {
+    font-size: 0.9rem;
+  }
+
+  .testimonials-bg .bg-word {
+    font-size: 3.5rem;
+  }
+}
+
+/* Extra Small Mobile (max-width: 375px) */
+@media (max-width: 375px) {
+  .overlap-img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .introduction h1 {
+    font-size: 1.2rem;
+  }
+
+  .section2-content h1 {
+    font-size: 1.2rem;
+  }
+
+  .card h3 {
+    font-size: 1rem;
+  }
+
+  .card p {
+    font-size: 0.9rem;
+  }
+
+  .timeline-content {
+    margin-left: 40px;
+    padding: 1rem;
+  }
+
+  .testimonials-bg .bg-word {
+    font-size: 2.5rem;
+  }
 }
