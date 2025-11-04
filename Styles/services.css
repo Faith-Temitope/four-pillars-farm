@@ -181,8 +181,8 @@ button a:hover {
 .services h2 {
   color: white;
   margin-bottom: 3.5rem;
-  text-decoration: underline yellow wavy;
-  text-underline-offset: 10px;
+  text-decoration: underline yellow;
+  text-underline-offset: 20px;
 }
 .services {
   padding: 4rem 2rem;
@@ -192,6 +192,16 @@ button a:hover {
   margin: 0 auto;
 }
 
+.services i {
+  font-size: 50px;
+  color: green;
+  margin: 1rem;
+transition: transform 0.3s;
+transform-style: preserve-3d;
+}
+.services i:hover {
+  transform: rotateY(180deg);
+}
 .service-container {
   display: flex;
   justify-content: space-around;
@@ -214,6 +224,7 @@ button a:hover {
 
 .card img {
   width: 100%;
+  height: 250px;
   border-radius: 10px;
 }
 
