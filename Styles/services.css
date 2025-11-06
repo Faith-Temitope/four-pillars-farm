@@ -146,9 +146,13 @@ button a:hover {
   animation: slideInDown 1.5s;
 }
 .hero-text h4 {
-  font-size: larger;
+  margin-top: -15px;
+  font-size: 30px;
   font-weight: 750;
   color: rgb(0, 0, 0);
+}
+.hero-text span {
+  color: green;
 }
 .hero-text p {
   margin: 1rem 0;
@@ -246,6 +250,7 @@ button a:hover {
 .about-text h2 {
   font-family: cursive;
   color: yellow;
+  text-shadow: 1px 1px 2px black;
   margin-left: 30px;
   margin-bottom: 30px;
 }
